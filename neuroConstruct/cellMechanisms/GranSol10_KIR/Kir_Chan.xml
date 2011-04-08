@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<channelml xmlns="http://morphml.org/channelml/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:meta="http://morphml.org/metadata/schema" xsi:schemaLocation="http://morphml.org/channelml/schema  http://www.neuroml.org/NeuroMLValidator/NeuroMLFiles/Schemata/v1.8.1/Level2/ChannelML_v1.8.1.xsd" units="Physiological Units">
+
+    <meta:notes>A channel from a granule cell model developed by .....</meta:notes>
+    
+    
+    <channel_type name="GranSol10_KIR">
+    
+        <status value="stable">
+            <meta:issue>.....</meta:issue>
+            <meta:contributor>
+                <meta:name>Padraig Gleeson</meta:name>
+            </meta:contributor>
+        </status>
+    
+        <meta:notes>.....</meta:notes>
+        
+
+        <meta:authorList>
+            <meta:modelAuthor>
+                <meta:name>Sergio Solinas</meta:name>
+            </meta:modelAuthor>
+            <meta:modelAuthor>
+                <meta:name>More from Pavia...</meta:name>
+            </meta:modelAuthor>
+          <meta:modelTranslator>
+            <meta:name>Padraig Gleeson</meta:name>
+            <meta:institution>UCL</meta:institution>
+            <meta:email>p.gleeson - at - ucl.ac.uk</meta:email>
+          </meta:modelTranslator>
+        </meta:authorList>
+           
+        
+        <meta:publication>
+          <meta:fullTitle>Solinas et al...</meta:fullTitle>
+          <meta:pubmedRef>???</meta:pubmedRef>
+        </meta:publication>  
+        
+   
+        <meta:neuronDBref>
+            <meta:modelName>K channels</meta:modelName>
+            <meta:uri>http://senselab.med.yale.edu/senselab/NeuronDB/channelGene2.htm#table3</meta:uri>
+        </meta:neuronDBref>
+
+        <current_voltage_relation cond_law="ohmic" ion="k" default_gmax="0.9" default_erev="-84.7">
+            <q10_settings q10_factor="3" experimental_temp="20"/>
+            <gate name="d" instances="1">
+
+                <closed_state id="d0"/>
+                <open_state id="d" fraction="1"/>
+
+                <transition name="alpha" from="d0" to="d" expr_form="exponential" rate="0.13289" scale="-24.3902" midpoint="-83.94"/>
+
+                <transition name="beta" from="d" to="d0" expr_form="exponential" rate="0.16994" scale="35.714" midpoint="-83.94"/>
+
+            </gate>
+        </current_voltage_relation>
+        
+
+        
+    </channel_type>
+</channelml>

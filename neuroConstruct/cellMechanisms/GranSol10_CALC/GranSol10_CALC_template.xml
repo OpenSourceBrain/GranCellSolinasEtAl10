@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<channelml xmlns="http://morphml.org/channelml/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:meta="http://morphml.org/metadata/schema" xsi:schemaLocation="http://morphml.org/channelml/schema   ../../Schemata/v1.7.2/Level2/ChannelML_v1.7.2.xsd" units="Physiological Units">
+
+    <ion name="ca" charge="2" role="SignallingSubstance">  
+        <meta:notes>Signifies that the ion is involved in a process which alters its concentration</meta:notes>
+    </ion>
+    
+    <ion_concentration name="GranSol10_CALC">
+        
+        <status value="in_progress"/>
+    
+        <meta:notes>Calcium first order kinetics, for the granule cell model used in Solinas 2010</meta:notes>
+
+        <meta:authorList>
+	  <meta:modelAuthor>
+            <meta:name>A. Fontana</meta:name>
+          </meta:modelAuthor>
+	</meta:authorList>
+
+        <meta:publication>
+          <meta:fullTitle>Solinas S., Nieus T, d'Angelo E. (2010) A Realistic Large-Scale Model of the Cerebellum Granular Layer Predicts Circuit Spatio-Temporal Filtering Properties. Front Cell Neurosci. 2010;4:12.</meta:fullTitle>
+          <meta:pubmedRef>http://www.ncbi.nlm.nih.gov/pubmed/20508743</meta:pubmedRef>
+        </meta:publication>
+
+        <ion_species name="ca"/>
+        
+        <decaying_pool_model resting_conc="1e-4" inv_decay_constant="1.5">
+          <pool_volume_info shell_thickness = "2e-5"/>
+	</decaying_pool_model>
+        
+    </ion_concentration>
+</channelml>

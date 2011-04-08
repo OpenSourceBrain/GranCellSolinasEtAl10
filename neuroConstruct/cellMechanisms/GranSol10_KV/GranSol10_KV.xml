@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<channelml xmlns="http://morphml.org/channelml/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:meta="http://morphml.org/metadata/schema" xsi:schemaLocation="http://morphml.org/channelml/schema http://www.neuroml.org/NeuroMLValidator/NeuroMLFiles/Schemata/v1.8.0/Level2/ChannelML_v1.8.0.xsd" units="Physiological Units">
+
+    <meta:notes>ChannelML file containing a single Channel description</meta:notes>
+
+    <channel_type name="GranSol10_KV">
+        
+        <status value="stable"></status>
+        
+        <meta:notes>KV channel used in Solinas et al. 2010</meta:notes>
+        
+        <meta:authorList>
+          <meta:modelAuthor>
+            <meta:name>A. Fontana</meta:name>
+            <meta:comment>Cited implementer according to the original .mod file. Note from original mod: Last revised: 12.12.98</meta:comment>
+          </meta:modelAuthor>
+
+          <meta:modelTranslator>
+            <meta:name>Eugenio Piasini</meta:name>
+            <meta:institution>UCL</meta:institution>
+            <meta:email>e.piasini - at - ucl.ac.uk</meta:email>
+          </meta:modelTranslator>
+            
+        </meta:authorList>
+
+        <meta:publication>
+          <meta:fullTitle>Solinas S., Nieus T, d'Angelo E. (2010) A Realistic Large-Scale Model of the Cerebellum Granular Layer Predicts Circuit Spatio-Temporal Filtering Properties. Front Cell Neurosci. 2010;4:12.</meta:fullTitle>
+          <meta:pubmedRef>http://www.ncbi.nlm.nih.gov/pubmed/20508743</meta:pubmedRef>
+        </meta:publication>
+
+        <current_voltage_relation cond_law="ohmic" ion="k" default_gmax="0.003" default_erev="-84.69">
+            <q10_settings q10_factor="3" experimental_temp="6.3"/>
+            
+            <gate name="n" instances="4">
+                <closed_state id="n0"/>
+                <open_state id="n"/>
+		    <!--
+		   FUNCTION alp_n(v(mV))(/ms) { LOCAL Q10
+		           Q10 = Q10_channel^((celsius-6.3(degC))/10(degC)) 
+		           alp_n = Q10*Aalpha_n*linoid(v-V0alpha_n, Kalpha_n)
+		   } 
+		   
+		   alp_n = (Q10)*Aalpha_n*linoid(v - V0alpha_n, Kalpha_n)
+		   
+		   Aalpha_n = -0.01 (/ms-mV)
+		   Kalpha_n = -10 (mV)
+		   V0alpha_n = -25 (mV)
+		   FUNCTION linoid(x (mV),y (mV)) (mV) {
+		            if (fabs(x/y) < 1e-6) {
+			       linoid = y*(1 - x/y/2)
+			    }else{
+   			       linoid = x/(exp(x/y) - 1)
+	           }
+					    
+		   alp_n = (Aalpha_n*Kalpha_n) * ((v-V0alpha_n)/Kalpha_n)/(exp((v-V0alpha_n)/Kalpha_n) - 1)
+		   alp_n = (Aalpha_n*Kalpha_n) * -((v-V0alpha_n)/-Kalpha_n)/(exp(-(v-V0alpha_n)/-Kalpha_n) - 1)
+		   alp_n = (Aalpha_n*Kalpha_n) * ((v-V0alpha_n)/-Kalpha_n)/(1 - exp(-(v-V0alpha_n)/-Kalpha_n))
+					    
+	           r := Aalpha_n*Kalpha_n = 0.1
+		   M := V0alpha_n = -25
+		   S := -Kalpha_n = 10
+
+		   alp_n = r * ((v - M)/S) / (1 - exp(-(v-M)/S))    (exp_linear)
+		
+		   FUNCTION bet_n(v(mV))(/ms) { LOCAL Q10
+		           Q10 = Q10_channel^((celsius-6.3(degC))/10(degC)) 
+			   bet_n = Q10*Abeta_n*exp((v-V0beta_n)/Kbeta_n) 
+		   } 
+
+		   bet_n = (Q10)*Abeta_n*exp((v-V0beta_n)/Kbeta_n) 
+		   
+		   r := Abeta_n = 0.125 (/ms)
+		   M := V0beta_n = -35 (mV)
+		   s := Kbeta_n = -80 (mV)
+
+		   bet_n = r * exp((v-M)/s)      (exponential)
+		   -->
+
+                     
+                <transition name="alpha" from="n0" to="n" expr_form="exp_linear" rate="0.1" scale="10" midpoint="-25"/>
+                <transition name="beta" from="n" to="n0" expr_form="exponential" rate="0.125" scale="-80" midpoint="-35"/>
+                    
+            </gate>
+        </current_voltage_relation>
+        
+    </channel_type>
+</channelml>

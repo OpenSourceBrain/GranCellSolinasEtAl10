@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<channelml xmlns="http://morphml.org/channelml/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:meta="http://morphml.org/metadata/schema" xsi:schemaLocation="http://morphml.org/channelml/schema http://www.neuroml.org/NeuroMLValidator/NeuroMLFiles/Schemata/v1.8.0/Level2/ChannelML_v1.8.0.xsd" units="Physiological Units">
+
+    <meta:notes>ChannelML file containing a single Channel description</meta:notes>
+
+    <channel_type name="GranSol10_pNa">
+        
+        <status value="stable">
+	  <meta:comment>Original comment: last revised on 8.5.2000</meta:comment>
+	</status>
+        
+        <meta:notes>pNa channel used in Solinas et al. 2010</meta:notes>
+        
+        <meta:authorList>
+          <meta:modelAuthor>  
+            <meta:name>E. d'Angelo</meta:name>
+          </meta:modelAuthor>
+          <meta:modelAuthor>  
+            <meta:name>T. Nieus</meta:name>
+          </meta:modelAuthor>
+          <meta:modelAuthor>  
+            <meta:name>A. Fontana</meta:name>
+          </meta:modelAuthor>
+	  <meta:modelTranslator>
+            <meta:name>Eugenio Piasini</meta:name>
+            <meta:institution>UCL</meta:institution>
+            <meta:email>e.piasini - at - ucl.ac.uk</meta:email>
+          </meta:modelTranslator>
+	</meta:authorList>
+
+        <meta:publication>
+          <meta:fullTitle>Solinas S., Nieus T, d'Angelo E. (2010) A Realistic Large-Scale Model of the Cerebellum Granular Layer Predicts Circuit Spatio-Temporal Filtering Properties. Front Cell Neurosci. 2010;4:12.</meta:fullTitle>
+          <meta:pubmedRef>http://www.ncbi.nlm.nih.gov/pubmed/20508743</meta:pubmedRef>
+        </meta:publication>
+
+        <current_voltage_relation cond_law="ohmic" ion="na" default_gmax="2E-5" default_erev="87.39">
+            <q10_settings q10_factor="3" experimental_temp="30"/>
+            
+            <gate name="m" instances="1">
+                <closed_state id="m0"/>
+                <open_state id="m"/>
+		<!--
+	           r := Aalpha_m*Kalpha_m = 4.55 (/ms)
+		   M := V0alpha_m = -42 (mV)
+		   S := -Kalpha_m = 5 (mV)
+		  -->                     
+                <transition name="alpha" from="m0" to="m" expr_form="exp_linear" rate="4.55" scale="5" midpoint="-42"/>
+		<!--
+	           r := Abeta_m*Kbeta_m = 3.1 (/ms)
+		   M := V0beta_m = -42 (mV)
+		   S := -Kbeta_m = -5 (mV)
+		  -->  
+                <transition name="beta" from="m" to="m0" expr_form="exp_linear" rate="3.1" scale="-5" midpoint="-42"/>
+		<steady_state name="inf" from="m0" to="m" expr_form="sigmoid" rate="1" scale="-5" midpoint="-42"/>
+		<time_course name="tau" from="m0" to="m" expr_form="generic" expr="5.0/(alpha + beta)"/>
+                    
+            </gate>
+        </current_voltage_relation>
+        
+    </channel_type>
+</channelml>

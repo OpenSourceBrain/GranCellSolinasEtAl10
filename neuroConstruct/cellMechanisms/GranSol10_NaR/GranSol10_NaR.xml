@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<channelml xmlns="http://morphml.org/channelml/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:meta="http://morphml.org/metadata/schema" xsi:schemaLocation="http://morphml.org/channelml/schema http://www.neuroml.org/NeuroMLValidator/NeuroMLFiles/Schemata/v1.8.0/Level2/ChannelML_v1.8.0.xsd" units="Physiological Units">
+
+    <meta:notes>ChannelML file containing a single Channel description</meta:notes>
+
+    <channel_type name="GranSol10_NaR">
+        
+        <status value="stable">
+	  <meta:comment>This version does not implement the "control" mentioned below. Original comment: last revised on 30.6.2003.</meta:comment>
+	</status>
+        
+        <meta:notes>Na resurgent channel used in Solinas et al. 2010. Original comment: "Critical value gNa. Inserted a control in bet_s to avoid huge values of x1"</meta:notes>
+        
+        <meta:authorList>
+          <meta:modelAuthor>  
+            <meta:name>T. Nieus</meta:name>
+          </meta:modelAuthor>
+	  <meta:modelTranslator>
+            <meta:name>Eugenio Piasini</meta:name>
+            <meta:institution>UCL</meta:institution>
+            <meta:email>e.piasini - at - ucl.ac.uk</meta:email>
+          </meta:modelTranslator>
+	</meta:authorList>
+
+        <meta:publication>
+          <meta:fullTitle>Solinas S., Nieus T, d'Angelo E. (2010) A Realistic Large-Scale Model of the Cerebellum Granular Layer Predicts Circuit Spatio-Temporal Filtering Properties. Front Cell Neurosci. 2010;4:12.</meta:fullTitle>
+          <meta:pubmedRef>http://www.ncbi.nlm.nih.gov/pubmed/20508743</meta:pubmedRef>
+        </meta:publication>
+
+        <current_voltage_relation cond_law="ohmic" ion="na" default_gmax="0.0002" default_erev="87.39">
+            <q10_settings q10_factor="3" experimental_temp="20"/>
+            
+            <gate name="s" instances="1">
+                <closed_state id="s0"/>
+                <open_state id="s"/>
+                     
+                <transition name="alpha" from="s0" to="s" expr_form="generic" expr="0.00008 + (-0.00493) * (v-4.48754)/(exp((v-4.48754)/(-6.81881)) - 1) "/>
+                <transition name="beta" from="s" to="s0" expr_form="generic" expr="0.04752 + 0.01558 * (v - (-43.97494))/(exp((v- (-43.97494))/0.10818) - 1)"/>                    
+            </gate>
+
+	    <gate name="f" instances="1">
+	      <closed_state id="f0"/>
+	      <open_state id="f"/>
+                <transition name="alpha" from="f0" to="f" expr_form="exponential" rate="0.31836" scale="-62.52621" midpoint="-80"/>
+                <transition name="beta" from="f" to="f0" expr_form="exponential" rate="0.01014" scale="16.05379" midpoint="-83.3332"/>
+	    </gate>
+        </current_voltage_relation>
+        
+    </channel_type>
+</channelml>

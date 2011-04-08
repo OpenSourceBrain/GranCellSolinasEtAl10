@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<channelml xmlns="http://morphml.org/channelml/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:meta="http://morphml.org/metadata/schema" xsi:schemaLocation="http://morphml.org/channelml/schema http://www.neuroml.org/NeuroMLValidator/NeuroMLFiles/Schemata/v1.8.0/Level2/ChannelML_v1.8.0.xsd" units="Physiological Units">
+
+    <meta:notes>ChannelML file containing a single Channel description</meta:notes>
+
+    <channel_type name="GranSol10_KA">
+        
+        <status value="stable">
+	  <meta:comment>Original comment: last revised on 8.5.2000</meta:comment>
+	</status>
+        
+        <meta:notes>KA channel used in Solinas et al. 2010</meta:notes>
+        
+        <meta:authorList>
+	  <meta:modelAuthor>  
+            <meta:name>E. d'Angelo</meta:name>
+          </meta:modelAuthor>
+	  <meta:modelAuthor>  
+            <meta:name>T. Nieus</meta:name>
+          </meta:modelAuthor>
+          <meta:modelAuthor>  
+            <meta:name>A. Fontana</meta:name>
+          </meta:modelAuthor>
+
+          <meta:modelTranslator>
+            <meta:name>Eugenio Piasini</meta:name>
+            <meta:institution>UCL</meta:institution>
+            <meta:email>e.piasini - at - ucl.ac.uk</meta:email>
+          </meta:modelTranslator>            
+        </meta:authorList>
+
+        <meta:publication>
+          <meta:fullTitle>Solinas S., Nieus T, d'Angelo E. (2010) A Realistic Large-Scale Model of the Cerebellum Granular Layer Predicts Circuit Spatio-Temporal Filtering Properties. Front Cell Neurosci. 2010;4:12.</meta:fullTitle>
+          <meta:pubmedRef>http://www.ncbi.nlm.nih.gov/pubmed/20508743</meta:pubmedRef>
+        </meta:publication>
+
+        <current_voltage_relation cond_law="ohmic" ion="k" default_gmax="0.0032" default_erev="-84.69">
+            <q10_settings q10_factor="3" experimental_temp="20"/>
+            
+            <gate name="a" instances="3">
+              <closed_state id="a0"/>
+              <open_state id="a"/>
+                     
+              <transition name="alpha" from="a0" to="a" expr_form="sigmoid" rate="0.81" scale="-23.32708" midpoint="-9.17203"/>
+              <transition name="beta" from="a" to="a0" expr_form="exponential" rate="0.17" scale="-19.47175" midpoint="-18.27914"/>
+	      <steady_state name="inf" from="a0" to="a" expr_form="sigmoid" rate="1" scale="-16.9492" midpoint="-38"/>
+                    
+            </gate>
+	    <gate name="b" instances="1">
+              <closed_state id="b0"/>
+              <open_state id="b"/>
+                     
+              <transition name="alpha" from="b0" to="b" expr_form="sigmoid" rate="0.037" scale="12.8433" midpoint="-111.33209"/>
+              <transition name="beta" from="b" to="b0" expr_form="sigmoid" rate="0.034" scale="-8.90123" midpoint="-49.9537"/>
+	      <steady_state name="inf" from="b0" to="b" expr_form="sigmoid" rate="1" scale="8.4" midpoint="-78.8"/>
+                    
+            </gate>
+        </current_voltage_relation>
+        
+    </channel_type>
+</channelml>
