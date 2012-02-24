@@ -45,6 +45,6 @@ trace_ax.set_xlabel('Time (ms)')
 trace_ax.set_ylabel('mV')
 trace_ax.set_title('Membrane potential')
 
-fig.suptitle('Pulse duration: %d ms; pulse amplitude: %d pA' % (duration, amplitude * 1e3))
+fig.suptitle('Pulse duration: %d ms; pulse amplitude: %d pA; temperature: %d deg C' % (duration, amplitude * 1e3, h.celsius))
 
 plt.show()
