@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.6.0_20" class="java.beans.XMLDecoder">
+<java version="1.6.0_23" class="java.beans.XMLDecoder">
 
 <!-- This is a neuroConstruct project file. It's best to open this
 file with neuroConstruct, as opposed to editing it directly. 
@@ -8,8 +8,19 @@ Note that this file is neuroConstruct specific and isn't any
 part of NeuroML or any standardised XML specification. -->
 
  <object class="ucl.physiol.neuroconstruct.project.BasicProjectInfo">
+  <void property="projectDescription">
+   <string>Cerebellar granule cell model from Solinas S, Nieus T and D’Angelo E (2010) A realistic large-scale model of the cerebellum granular layer predicts circuit spatio-temporal filtering properties. Front. Cell. Neurosci. 
+
+Kv - tested mod == NRN
+
+Note: ChannelML versions of mod files will only work at 30degC, due to ChannelML&apos;s lack of q10 scaling of total conductance (see original mod file versions: gbar_Q10 = gbar*(Q10_diff^((celsius-30)/10)), etc).
+
+NeuroML2 will incorporate this feature and so the basic mappings ChannelML -&gt; NML2 channels will be used as a basis for the fully temp dependent channels.
+
+But first the ChannelMLversions at 30deg should be matched to the mod files &amp; tested...</string>
+  </void>
   <void property="projectFileVersion">
-   <string>neuroConstruct v1.4.1</string>
+   <string>neuroConstruct v1.5.3</string>
   </void>
   <void property="projectName">
    <string>GranCellSolinasEtAl10</string>
@@ -64,6 +75,12 @@ part of NeuroML or any standardised XML specification. -->
   <void property="internalData">
    <void method="get">
     <string>Cell Packing Adapter</string>
+    <void method="add">
+     <object class="ucl.physiol.neuroconstruct.project.packing.RandomCellPackingAdapter"/>
+    </void>
+    <void method="add">
+     <object class="ucl.physiol.neuroconstruct.project.packing.RandomCellPackingAdapter"/>
+    </void>
     <void method="add">
      <object class="ucl.physiol.neuroconstruct.project.packing.RandomCellPackingAdapter"/>
     </void>
@@ -175,6 +192,12 @@ part of NeuroML or any standardised XML specification. -->
     <void method="add">
      <string>GranCellSol10_pNa</string>
     </void>
+    <void method="add">
+     <string>GranCellSol10_CML</string>
+    </void>
+    <void method="add">
+     <string>GranCellSol10_mod</string>
+    </void>
    </void>
    <void method="get">
     <string>Priority</string>
@@ -231,6 +254,12 @@ part of NeuroML or any standardised XML specification. -->
     </void>
     <void method="add">
      <int>-7</int>
+    </void>
+    <void method="add">
+     <int>-8</int>
+    </void>
+    <void method="add">
+     <int>-9</int>
     </void>
    </void>
    <void method="get">
@@ -379,9 +408,31 @@ part of NeuroML or any standardised XML specification. -->
       <int>255</int>
      </object>
     </void>
+    <void method="add">
+     <object class="java.awt.Color">
+      <int>138</int>
+      <int>93</int>
+      <int>191</int>
+      <int>255</int>
+     </object>
+    </void>
+    <void method="add">
+     <object class="java.awt.Color">
+      <int>43</int>
+      <int>249</int>
+      <int>227</int>
+      <int>255</int>
+     </object>
+    </void>
    </void>
    <void method="get">
     <string>Region Name</string>
+    <void method="add">
+     <string>Regions_1</string>
+    </void>
+    <void method="add">
+     <string>Regions_1</string>
+    </void>
     <void method="add">
      <string>Regions_1</string>
     </void>
@@ -492,6 +543,12 @@ part of NeuroML or any standardised XML specification. -->
     </void>
     <void method="add">
      <string>pNa_CML</string>
+    </void>
+    <void method="add">
+     <string>GranCell_CML</string>
+    </void>
+    <void method="add">
+     <string>GranCell_mod</string>
     </void>
    </void>
   </void>
@@ -1808,6 +1865,62 @@ part of NeuroML or any standardised XML specification. -->
      </void>
     </object>
    </void>
+   <void method="add">
+    <object class="ucl.physiol.neuroconstruct.project.SimPlot">
+     <void property="cellGroup">
+      <string>GranCell_CML</string>
+     </void>
+     <void property="cellNumber">
+      <string>*</string>
+     </void>
+     <void property="graphWindow">
+      <string>GranCell_CML_v</string>
+     </void>
+     <void property="maxValue">
+      <float>50.0</float>
+     </void>
+     <void property="minValue">
+      <float>-75.0</float>
+     </void>
+     <void property="plotAndOrSave">
+      <string>Plot and save</string>
+     </void>
+     <void property="plotReference">
+      <string>GranCell_CML_v</string>
+     </void>
+     <void property="segmentId">
+      <string>0</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="ucl.physiol.neuroconstruct.project.SimPlot">
+     <void property="cellGroup">
+      <string>GranCell_mod</string>
+     </void>
+     <void property="cellNumber">
+      <string>*</string>
+     </void>
+     <void property="graphWindow">
+      <string>GranCell_CML_v</string>
+     </void>
+     <void property="maxValue">
+      <float>50.0</float>
+     </void>
+     <void property="minValue">
+      <float>-75.0</float>
+     </void>
+     <void property="plotAndOrSave">
+      <string>Plot and save</string>
+     </void>
+     <void property="plotReference">
+      <string>GranCell_mod_v</string>
+     </void>
+     <void property="segmentId">
+      <string>0</string>
+     </void>
+    </object>
+   </void>
   </void>
  </object>
  <object class="ucl.physiol.neuroconstruct.project.ProjectProperties">
@@ -1816,6 +1929,9 @@ part of NeuroML or any standardised XML specification. -->
   </void>
  </object>
  <object class="ucl.physiol.neuroconstruct.utils.Display3DProperties">
+  <void property="antiAliasing">
+   <int>1</int>
+  </void>
   <void property="backgroundColour3D">
    <object class="java.awt.Color">
     <int>144</int>
@@ -1838,7 +1954,11 @@ part of NeuroML or any standardised XML specification. -->
    <boolean>true</boolean>
   </void>
  </object>
- <object class="ucl.physiol.neuroconstruct.genesis.GenesisSettings"/>
+ <object class="ucl.physiol.neuroconstruct.genesis.GenesisSettings">
+  <void property="unitSystemToUse">
+   <int>3</int>
+  </void>
+ </object>
  <object class="ucl.physiol.neuroconstruct.psics.PsicsSettings"/>
  <object class="ucl.physiol.neuroconstruct.simulation.SimulationParameters">
   <void property="dt">
@@ -1848,7 +1968,7 @@ part of NeuroML or any standardised XML specification. -->
    <float>100.0</float>
   </void>
   <void property="reference">
-   <string>Sim_189</string>
+   <string>Sim_205</string>
   </void>
   <void property="saveCopyGenSimFiles">
    <boolean>true</boolean>
@@ -2286,20 +2406,100 @@ part of NeuroML or any standardised XML specification. -->
      </void>
     </object>
    </void>
+   <void method="add">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+     <void property="amp">
+      <void property="fixedNum">
+       <float>0.01</float>
+      </void>
+     </void>
+     <void property="cellGroup">
+      <string>GranCell_CML</string>
+     </void>
+     <void property="del">
+      <void property="fixedNum">
+       <float>100.0</float>
+      </void>
+     </void>
+     <void property="dur">
+      <void property="fixedNum">
+       <float>500.0</float>
+      </void>
+      <void property="numberType">
+       <int>11</int>
+      </void>
+     </void>
+     <void property="reference">
+      <string>Input_0</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+     <void property="amp">
+      <void property="fixedNum">
+       <float>0.01</float>
+      </void>
+     </void>
+     <void property="cellGroup">
+      <string>GranCell_mod</string>
+     </void>
+     <void property="del">
+      <void property="fixedNum">
+       <float>100.0</float>
+      </void>
+     </void>
+     <void property="dur">
+      <void property="fixedNum">
+       <float>500.0</float>
+      </void>
+      <void property="numberType">
+       <int>11</int>
+      </void>
+     </void>
+     <void property="reference">
+      <string>Input_1</string>
+     </void>
+    </object>
+   </void>
   </void>
  </object>
  <object class="ucl.physiol.neuroconstruct.project.SimConfigInfo">
   <void property="allSimConfigs">
    <void method="add">
     <object class="ucl.physiol.neuroconstruct.project.SimConfig">
+     <void property="cellGroups">
+      <void method="add">
+       <string>GranCell_CML</string>
+      </void>
+      <void method="add">
+       <string>GranCell_mod</string>
+      </void>
+     </void>
      <void property="description">
       <string>This is the default configuration of the Cell Groups, stimulations, plots, etc for this project</string>
+     </void>
+     <void property="inputs">
+      <void method="add">
+       <string>Input_1</string>
+      </void>
+      <void method="add">
+       <string>Input_0</string>
+      </void>
      </void>
      <void property="name">
       <string>Default Simulation Configuration</string>
      </void>
+     <void property="plots">
+      <void method="add">
+       <string>GranCell_mod_v</string>
+      </void>
+      <void method="add">
+       <string>GranCell_CML_v</string>
+      </void>
+     </void>
      <void property="simDuration">
-      <float>300.0</float>
+      <float>700.0</float>
      </void>
     </object>
    </void>
@@ -2307,10 +2507,10 @@ part of NeuroML or any standardised XML specification. -->
     <object class="ucl.physiol.neuroconstruct.project.SimConfig">
      <void property="cellGroups">
       <void method="add">
-       <string>KV_CML</string>
+       <string>KV_mod</string>
       </void>
       <void method="add">
-       <string>KV_mod</string>
+       <string>KV_CML</string>
       </void>
      </void>
      <void property="description">
@@ -2318,19 +2518,16 @@ part of NeuroML or any standardised XML specification. -->
      </void>
      <void property="inputs">
       <void method="add">
-       <string>KV_CML</string>
+       <string>KV_mod</string>
       </void>
       <void method="add">
-       <string>KV_mod</string>
+       <string>KV_CML</string>
       </void>
      </void>
      <void property="name">
       <string>KV</string>
      </void>
      <void property="plots">
-      <void method="add">
-       <string>KV_CML</string>
-      </void>
       <void method="add">
        <string>KV_mod_v</string>
       </void>
@@ -2339,6 +2536,9 @@ part of NeuroML or any standardised XML specification. -->
       </void>
       <void method="add">
        <string>KV_CML_v</string>
+      </void>
+      <void method="add">
+       <string>KV_CML</string>
       </void>
      </void>
      <void property="simDuration">
