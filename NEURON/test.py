@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 """
 Tests the granule cell model by simulating the injection of a current pulse.
-Usage: python granule/test.py
+Usage: python test.py
 """
 from neuron import h
 import numpy as np
 from matplotlib import pyplot as plt
 
-from granule.GRANULE_Cell import Grc
+from GRANULE_Cell import Grc
 
 delay = 100.
 duration = 500.
