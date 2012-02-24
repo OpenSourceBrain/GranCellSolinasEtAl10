@@ -20,6 +20,10 @@ electrode.delay = delay
 electrode.dur = duration
 electrode.amp = amplitude
 
+h.psection()
+h.celsius = 37
+print "Temperature of simulation is %f deg C "%h.celsius
+
 # run the simulation
 h.load_file("stdrun.hoc")
 h.tstop = tstop
@@ -41,6 +45,6 @@ trace_ax.set_xlabel('Time (ms)')
 trace_ax.set_ylabel('mV')
 trace_ax.set_title('Membrane potential')
 
-fig.suptitle('pulse duration: %d ms; pulse amplitude: %d pA' % (duration, amplitude * 1e3))
+fig.suptitle('Pulse duration: %d ms; pulse amplitude: %d pA' % (duration, amplitude * 1e3))
 
 plt.show()
