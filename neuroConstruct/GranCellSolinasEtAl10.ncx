@@ -11,13 +11,14 @@ part of NeuroML or any standardised XML specification. -->
   <void property="projectDescription">
    <string>Cerebellar granule cell model from Solinas S, Nieus T and D`Angelo E (2010) A realistic large-scale model of the cerebellum granular layer predicts circuit spatio-temporal filtering properties. Front. Cell. Neurosci.  
 
-Kv - tested mod == NRN
-
 Note: ChannelML versions of mod files will only work at 30degC, due to ChannelML&apos;s lack of q10 scaling of total conductance (see original mod file versions: gbar_Q10 = gbar*(Q10_diff^((celsius-30)/10)), etc).
 
 NeuroML2 will incorporate this feature and so the basic mappings ChannelML -&gt; NML2 channels will be used as a basis for the fully temp dependent channels.
 
-But first the ChannelMLversions at 30deg should be matched to the mod files &amp; tested...</string>
+But first the ChannelMLversions at 30deg should be matched to the mod files &amp; tested...
+
+Tests:
+KV: mod == NEURON</string>
   </void>
   <void property="projectFileVersion">
    <string>neuroConstruct v1.5.3</string>
@@ -1968,7 +1969,7 @@ But first the ChannelMLversions at 30deg should be matched to the mod files &amp
    <float>100.0</float>
   </void>
   <void property="reference">
-   <string>Sim_205</string>
+   <string>Sim_211</string>
   </void>
   <void property="saveCopyGenSimFiles">
    <boolean>true</boolean>
@@ -2507,9 +2508,6 @@ But first the ChannelMLversions at 30deg should be matched to the mod files &amp
     <object class="ucl.physiol.neuroconstruct.project.SimConfig">
      <void property="cellGroups">
       <void method="add">
-       <string>KV_mod</string>
-      </void>
-      <void method="add">
        <string>KV_CML</string>
       </void>
      </void>
@@ -2542,7 +2540,7 @@ But first the ChannelMLversions at 30deg should be matched to the mod files &amp
       </void>
      </void>
      <void property="simDuration">
-      <float>100.0</float>
+      <float>200.0</float>
      </void>
     </object>
    </void>
