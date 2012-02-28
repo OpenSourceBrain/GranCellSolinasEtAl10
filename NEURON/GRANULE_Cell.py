@@ -111,6 +111,8 @@ class Grc:
             self.gocncpc[-1].weight[0] = 1
             return self.gocncpc[-1]
 
+    def getSomaSection(self):
+        return self.soma
 
     def destroy(self):
         del self.nc
