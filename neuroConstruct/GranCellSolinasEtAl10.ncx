@@ -1924,11 +1924,7 @@ KV: mod == NEURON</string>
    </void>
   </void>
  </object>
- <object class="ucl.physiol.neuroconstruct.project.ProjectProperties">
-  <void property="preferredSaveFormat">
-   <string>Java Serialized Object Format</string>
-  </void>
- </object>
+ <object class="ucl.physiol.neuroconstruct.project.ProjectProperties"/>
  <object class="ucl.physiol.neuroconstruct.utils.Display3DProperties">
   <void property="antiAliasing">
    <int>1</int>
