@@ -62,21 +62,6 @@
    <void method="put">
     <object class="ucl.physiol.neuroconstruct.cell.ChannelMechanism">
      <void property="density">
-      <float>4.5E-11</float>
-     </void>
-     <void property="name">
-      <string>GranSol10_KCa</string>
-     </void>
-    </object>
-    <object class="java.util.Vector">
-     <void method="add">
-      <string>all</string>
-     </void>
-    </object>
-   </void>
-   <void method="put">
-    <object class="ucl.physiol.neuroconstruct.cell.ChannelMechanism">
-     <void property="density">
       <float>5.68E-10</float>
      </void>
      <void property="name">
@@ -96,6 +81,21 @@
      </void>
      <void property="name">
       <string>GranSol10_CALC</string>
+     </void>
+    </object>
+    <object class="java.util.Vector">
+     <void method="add">
+      <string>all</string>
+     </void>
+    </object>
+   </void>
+   <void method="put">
+    <object class="ucl.physiol.neuroconstruct.cell.ChannelMechanism">
+     <void property="density">
+      <float>4.5E-11</float>
+     </void>
+     <void property="name">
+      <string>GranSol10_KCa</string>
      </void>
     </object>
     <object class="java.util.Vector">
@@ -153,6 +153,19 @@
       <float>-84.69</float>
      </void>
     </object>
+    <object class="java.util.Vector">
+     <void method="add">
+      <string>all</string>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="specAxResVsGroups">
+   <void method="remove">
+    <float>300.0</float>
+   </void>
+   <void method="put">
+    <float>100.0</float>
     <object class="java.util.Vector">
      <void method="add">
       <string>all</string>
