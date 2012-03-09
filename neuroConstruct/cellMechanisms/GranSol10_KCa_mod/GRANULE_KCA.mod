@@ -92,9 +92,9 @@ FUNCTION bet_c(v(mV))(/ms) { LOCAL Q10
 } 
  
 PROCEDURE rate(v (mV)) {LOCAL a_c, b_c 
-	TABLE c_inf, tau_c 
-	DEPEND Aalpha_c, Balpha_c, Kalpha_c, 
-	       Abeta_c, Bbeta_c, Kbeta_c, celsius FROM -100 TO 30 WITH 13000 
+	:TABLE c_inf, tau_c 
+	:DEPEND Aalpha_c, Balpha_c, Kalpha_c, 
+	:       Abeta_c, Bbeta_c, Kbeta_c, celsius FROM -100 TO 30 WITH 13000 
 	a_c = alp_c(v)  
 	b_c = bet_c(v) 
 	tau_c = 1/(a_c + b_c) 

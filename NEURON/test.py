@@ -21,7 +21,7 @@ def testCell(runAndPlotAlso):
     electrode.amp = amplitude
 
     h.psection()
-    h.celsius = 37
+    h.celsius = 30
     print "Temperature of simulation is %f deg C "%h.celsius
 
     # run the simulation
