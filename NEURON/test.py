@@ -37,7 +37,27 @@ def testCell(runAndPlotAlso):
         # convert the membrane potential and time values in numpy arrays
         time_points = np.array(granule.time)
         vm_points = np.array(granule.vm)
+        
+        spiking  = 0 
+        threshold = 0
+        spike_times = []
 
+        for i in range(len(time_points)):
+
+            if not spiking and vm_points[i] >= threshold:
+                spike_times.append(float(time_points[i]))
+                spiking = 1
+            elif spiking and vm_points[i] < threshold:
+                spiking = 0
+
+        spike_times_file = open("spike_times_%sdeg_%snA.dat"%(h.celsius, electrode.amp), 'w')
+        for st in spike_times:
+            spike_times_file.write('%f\n'%st)
+        spike_times_file.close()
+
+        print "Saved spike times in file %s"%spike_times_file.name
+
+        
         from matplotlib import pyplot as plt
         fig = plt.figure()
         trace_ax = fig.add_subplot(111)

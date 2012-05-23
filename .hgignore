@@ -11,3 +11,5 @@ generatedMOOSE
 generatedPSICS
 simulations
 *.bak
+
+NEURON/spike_times*.dat
