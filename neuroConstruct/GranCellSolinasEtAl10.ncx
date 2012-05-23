@@ -9,7 +9,7 @@ part of NeuroML or any standardised XML specification. -->
 
  <object class="ucl.physiol.neuroconstruct.project.BasicProjectInfo">
   <void property="projectDescription">
-   <string>Cerebellar granule cell model from Solinas S, Nieus T and D`Angelo E (2010) A realistic large-scale model of the cerebellum granular layer predicts circuit spatio-temporal filtering properties. Front. Cell. Neurosci.  
+   <string>Cerebellar granule cell model from Solinas S, Nieus T and D`Angelo E (2010) A realistic large-scale model of the cerebellum granular layer predicts circuit spatio-temporal filtering properties. Front. Cell. Neurosci.   
 
 Note: ChannelML versions of mod files will only work at 30degC, due to ChannelML&apos;s lack of q10 scaling of total conductance (see original mod file versions: gbar_Q10 = gbar*(Q10_diff^((celsius-30)/10)), etc).
 
@@ -1924,7 +1924,11 @@ KV: mod == NEURON</string>
    </void>
   </void>
  </object>
- <object class="ucl.physiol.neuroconstruct.project.ProjectProperties"/>
+ <object class="ucl.physiol.neuroconstruct.project.ProjectProperties">
+  <void property="preferredSaveFormat">
+   <string>NeuroML v1.8.1 Format</string>
+  </void>
+ </object>
  <object class="ucl.physiol.neuroconstruct.utils.Display3DProperties">
   <void property="antiAliasing">
    <int>1</int>
