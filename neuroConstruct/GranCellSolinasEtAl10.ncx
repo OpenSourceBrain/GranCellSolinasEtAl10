@@ -21,7 +21,7 @@ Tests:
 KV: mod == NEURON</string>
   </void>
   <void property="projectFileVersion">
-   <string>neuroConstruct v1.5.3</string>
+   <string>neuroConstruct v1.6.0</string>
   </void>
   <void property="projectName">
    <string>GranCellSolinasEtAl10</string>
@@ -1959,13 +1959,13 @@ KV: mod == NEURON</string>
  <object class="ucl.physiol.neuroconstruct.psics.PsicsSettings"/>
  <object class="ucl.physiol.neuroconstruct.simulation.SimulationParameters">
   <void property="dt">
-   <float>0.025</float>
+   <float>0.001</float>
   </void>
   <void property="duration">
    <float>100.0</float>
   </void>
   <void property="reference">
-   <string>Sim_216</string>
+   <string>Sim_218</string>
   </void>
   <void property="saveCopyGenSimFiles">
    <boolean>true</boolean>
@@ -2890,6 +2890,34 @@ KV: mod == NEURON</string>
      </void>
      <void property="simDuration">
       <float>100.0</float>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig">
+     <void property="cellGroups">
+      <void method="add">
+       <string>GranCell_mod</string>
+      </void>
+     </void>
+     <void property="description">
+      <string>Only one cell group with a cell with the original mod files used for its channels</string>
+     </void>
+     <void property="inputs">
+      <void method="add">
+       <string>Input_1</string>
+      </void>
+     </void>
+     <void property="name">
+      <string>Original mod channels</string>
+     </void>
+     <void property="plots">
+      <void method="add">
+       <string>GranCell_mod_v</string>
+      </void>
+     </void>
+     <void property="simDuration">
+      <float>700.0</float>
      </void>
     </object>
    </void>
