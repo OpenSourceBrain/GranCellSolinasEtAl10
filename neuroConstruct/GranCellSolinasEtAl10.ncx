@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.6.0_23" class="java.beans.XMLDecoder">
+<java version="1.7.0_25" class="java.beans.XMLDecoder">
 
 <!-- This is a neuroConstruct project file. It's best to open this
 file with neuroConstruct, as opposed to editing it directly. 
@@ -18,10 +18,10 @@ NeuroML2 will incorporate this feature and so the basic mappings ChannelML -&gt;
 But first the ChannelMLversions at 30deg should be matched to the mod files &amp; tested...
 
 Tests:
-KV: mod == NEURON</string>
+KV: mod == NEURON </string>
   </void>
   <void property="projectFileVersion">
-   <string>neuroConstruct v1.6.0</string>
+   <string>neuroConstruct v1.7.0</string>
   </void>
   <void property="projectName">
    <string>GranCellSolinasEtAl10</string>
@@ -51,19 +51,31 @@ KV: mod == NEURON</string>
     <void method="add">
      <object class="ucl.physiol.neuroconstruct.project.RectangularBox">
       <void property="parameterList">
-       <void index="3">
-        <void property="value">
-         <float>120.0</float>
+       <void id="InternalParameter0" index="3">
+        <void class="ucl.physiol.neuroconstruct.project.InternalParameter" method="getField">
+         <string>value</string>
+         <void method="set">
+          <object idref="InternalParameter0"/>
+          <float>120.0</float>
+         </void>
         </void>
        </void>
-       <void index="4">
-        <void property="value">
-         <float>50.0</float>
+       <void id="InternalParameter1" index="4">
+        <void class="ucl.physiol.neuroconstruct.project.InternalParameter" method="getField">
+         <string>value</string>
+         <void method="set">
+          <object idref="InternalParameter1"/>
+          <float>50.0</float>
+         </void>
         </void>
        </void>
-       <void index="5">
-        <void property="value">
-         <float>120.0</float>
+       <void id="InternalParameter2" index="5">
+        <void class="ucl.physiol.neuroconstruct.project.InternalParameter" method="getField">
+         <string>value</string>
+         <void method="set">
+          <object idref="InternalParameter2"/>
+          <float>120.0</float>
+         </void>
         </void>
        </void>
       </void>
@@ -1998,12 +2010,16 @@ KV: mod == NEURON</string>
        <float>50.0</float>
       </void>
      </void>
-     <void property="dur">
+     <void id="NumberGenerator0" property="dur">
+      <void class="ucl.physiol.neuroconstruct.utils.NumberGenerator" method="getField">
+       <string>numberType</string>
+       <void method="set">
+        <object idref="NumberGenerator0"/>
+        <int>11</int>
+       </void>
+      </void>
       <void property="fixedNum">
        <float>100.0</float>
-      </void>
-      <void property="numberType">
-       <int>11</int>
       </void>
      </void>
      <void property="reference">
@@ -2026,12 +2042,16 @@ KV: mod == NEURON</string>
        <float>50.0</float>
       </void>
      </void>
-     <void property="dur">
+     <void id="NumberGenerator1" property="dur">
+      <void class="ucl.physiol.neuroconstruct.utils.NumberGenerator" method="getField">
+       <string>numberType</string>
+       <void method="set">
+        <object idref="NumberGenerator1"/>
+        <int>11</int>
+       </void>
+      </void>
       <void property="fixedNum">
        <float>100.0</float>
-      </void>
-      <void property="numberType">
-       <int>11</int>
       </void>
      </void>
      <void property="reference">
@@ -2054,12 +2074,16 @@ KV: mod == NEURON</string>
        <float>50.0</float>
       </void>
      </void>
-     <void property="dur">
+     <void id="NumberGenerator2" property="dur">
+      <void class="ucl.physiol.neuroconstruct.utils.NumberGenerator" method="getField">
+       <string>numberType</string>
+       <void method="set">
+        <object idref="NumberGenerator2"/>
+        <int>11</int>
+       </void>
+      </void>
       <void property="fixedNum">
        <float>100.0</float>
-      </void>
-      <void property="numberType">
-       <int>11</int>
       </void>
      </void>
      <void property="reference">
@@ -2082,12 +2106,16 @@ KV: mod == NEURON</string>
        <float>50.0</float>
       </void>
      </void>
-     <void property="dur">
+     <void id="NumberGenerator3" property="dur">
+      <void class="ucl.physiol.neuroconstruct.utils.NumberGenerator" method="getField">
+       <string>numberType</string>
+       <void method="set">
+        <object idref="NumberGenerator3"/>
+        <int>11</int>
+       </void>
+      </void>
       <void property="fixedNum">
        <float>100.0</float>
-      </void>
-      <void property="numberType">
-       <int>11</int>
       </void>
      </void>
      <void property="reference">
@@ -2110,12 +2138,16 @@ KV: mod == NEURON</string>
        <float>50.0</float>
       </void>
      </void>
-     <void property="dur">
+     <void id="NumberGenerator4" property="dur">
+      <void class="ucl.physiol.neuroconstruct.utils.NumberGenerator" method="getField">
+       <string>numberType</string>
+       <void method="set">
+        <object idref="NumberGenerator4"/>
+        <int>11</int>
+       </void>
+      </void>
       <void property="fixedNum">
        <float>100.0</float>
-      </void>
-      <void property="numberType">
-       <int>11</int>
       </void>
      </void>
      <void property="reference">
@@ -2138,12 +2170,16 @@ KV: mod == NEURON</string>
        <float>50.0</float>
       </void>
      </void>
-     <void property="dur">
+     <void id="NumberGenerator5" property="dur">
+      <void class="ucl.physiol.neuroconstruct.utils.NumberGenerator" method="getField">
+       <string>numberType</string>
+       <void method="set">
+        <object idref="NumberGenerator5"/>
+        <int>11</int>
+       </void>
+      </void>
       <void property="fixedNum">
        <float>100.0</float>
-      </void>
-      <void property="numberType">
-       <int>11</int>
       </void>
      </void>
      <void property="reference">
@@ -2166,12 +2202,16 @@ KV: mod == NEURON</string>
        <float>50.0</float>
       </void>
      </void>
-     <void property="dur">
+     <void id="NumberGenerator6" property="dur">
+      <void class="ucl.physiol.neuroconstruct.utils.NumberGenerator" method="getField">
+       <string>numberType</string>
+       <void method="set">
+        <object idref="NumberGenerator6"/>
+        <int>11</int>
+       </void>
+      </void>
       <void property="fixedNum">
        <float>100.0</float>
-      </void>
-      <void property="numberType">
-       <int>11</int>
       </void>
      </void>
      <void property="reference">
@@ -2194,12 +2234,16 @@ KV: mod == NEURON</string>
        <float>50.0</float>
       </void>
      </void>
-     <void property="dur">
+     <void id="NumberGenerator7" property="dur">
+      <void class="ucl.physiol.neuroconstruct.utils.NumberGenerator" method="getField">
+       <string>numberType</string>
+       <void method="set">
+        <object idref="NumberGenerator7"/>
+        <int>11</int>
+       </void>
+      </void>
       <void property="fixedNum">
        <float>100.0</float>
-      </void>
-      <void property="numberType">
-       <int>11</int>
       </void>
      </void>
      <void property="reference">
@@ -2217,9 +2261,13 @@ KV: mod == NEURON</string>
      <void property="cellGroup">
       <string>KA_mod</string>
      </void>
-     <void property="dur">
-      <void property="numberType">
-       <int>11</int>
+     <void id="NumberGenerator8" property="dur">
+      <void class="ucl.physiol.neuroconstruct.utils.NumberGenerator" method="getField">
+       <string>numberType</string>
+       <void method="set">
+        <object idref="NumberGenerator8"/>
+        <int>11</int>
+       </void>
       </void>
      </void>
      <void property="reference">
@@ -2237,9 +2285,13 @@ KV: mod == NEURON</string>
      <void property="cellGroup">
       <string>KA_CML</string>
      </void>
-     <void property="dur">
-      <void property="numberType">
-       <int>11</int>
+     <void id="NumberGenerator9" property="dur">
+      <void class="ucl.physiol.neuroconstruct.utils.NumberGenerator" method="getField">
+       <string>numberType</string>
+       <void method="set">
+        <object idref="NumberGenerator9"/>
+        <int>11</int>
+       </void>
       </void>
      </void>
      <void property="reference">
@@ -2257,9 +2309,13 @@ KV: mod == NEURON</string>
      <void property="cellGroup">
       <string>Ca_mod</string>
      </void>
-     <void property="dur">
-      <void property="numberType">
-       <int>11</int>
+     <void id="NumberGenerator10" property="dur">
+      <void class="ucl.physiol.neuroconstruct.utils.NumberGenerator" method="getField">
+       <string>numberType</string>
+       <void method="set">
+        <object idref="NumberGenerator10"/>
+        <int>11</int>
+       </void>
       </void>
      </void>
      <void property="reference">
@@ -2277,9 +2333,13 @@ KV: mod == NEURON</string>
      <void property="cellGroup">
       <string>Ca_CML</string>
      </void>
-     <void property="dur">
-      <void property="numberType">
-       <int>11</int>
+     <void id="NumberGenerator11" property="dur">
+      <void class="ucl.physiol.neuroconstruct.utils.NumberGenerator" method="getField">
+       <string>numberType</string>
+       <void method="set">
+        <object idref="NumberGenerator11"/>
+        <int>11</int>
+       </void>
       </void>
      </void>
      <void property="reference">
@@ -2297,9 +2357,13 @@ KV: mod == NEURON</string>
      <void property="cellGroup">
       <string>Na_mod</string>
      </void>
-     <void property="dur">
-      <void property="numberType">
-       <int>11</int>
+     <void id="NumberGenerator12" property="dur">
+      <void class="ucl.physiol.neuroconstruct.utils.NumberGenerator" method="getField">
+       <string>numberType</string>
+       <void method="set">
+        <object idref="NumberGenerator12"/>
+        <int>11</int>
+       </void>
       </void>
      </void>
      <void property="reference">
@@ -2317,9 +2381,13 @@ KV: mod == NEURON</string>
      <void property="cellGroup">
       <string>Na_CML</string>
      </void>
-     <void property="dur">
-      <void property="numberType">
-       <int>11</int>
+     <void id="NumberGenerator13" property="dur">
+      <void class="ucl.physiol.neuroconstruct.utils.NumberGenerator" method="getField">
+       <string>numberType</string>
+       <void method="set">
+        <object idref="NumberGenerator13"/>
+        <int>11</int>
+       </void>
       </void>
      </void>
      <void property="reference">
@@ -2337,9 +2405,13 @@ KV: mod == NEURON</string>
      <void property="cellGroup">
       <string>NaR_mod</string>
      </void>
-     <void property="dur">
-      <void property="numberType">
-       <int>11</int>
+     <void id="NumberGenerator14" property="dur">
+      <void class="ucl.physiol.neuroconstruct.utils.NumberGenerator" method="getField">
+       <string>numberType</string>
+       <void method="set">
+        <object idref="NumberGenerator14"/>
+        <int>11</int>
+       </void>
       </void>
      </void>
      <void property="reference">
@@ -2357,9 +2429,13 @@ KV: mod == NEURON</string>
      <void property="cellGroup">
       <string>NaR_CML</string>
      </void>
-     <void property="dur">
-      <void property="numberType">
-       <int>11</int>
+     <void id="NumberGenerator15" property="dur">
+      <void class="ucl.physiol.neuroconstruct.utils.NumberGenerator" method="getField">
+       <string>numberType</string>
+       <void method="set">
+        <object idref="NumberGenerator15"/>
+        <int>11</int>
+       </void>
       </void>
      </void>
      <void property="reference">
@@ -2377,9 +2453,13 @@ KV: mod == NEURON</string>
      <void property="cellGroup">
       <string>pNa_mod</string>
      </void>
-     <void property="dur">
-      <void property="numberType">
-       <int>11</int>
+     <void id="NumberGenerator16" property="dur">
+      <void class="ucl.physiol.neuroconstruct.utils.NumberGenerator" method="getField">
+       <string>numberType</string>
+       <void method="set">
+        <object idref="NumberGenerator16"/>
+        <int>11</int>
+       </void>
       </void>
      </void>
      <void property="reference">
@@ -2397,9 +2477,13 @@ KV: mod == NEURON</string>
      <void property="cellGroup">
       <string>pNa_CML</string>
      </void>
-     <void property="dur">
-      <void property="numberType">
-       <int>11</int>
+     <void id="NumberGenerator17" property="dur">
+      <void class="ucl.physiol.neuroconstruct.utils.NumberGenerator" method="getField">
+       <string>numberType</string>
+       <void method="set">
+        <object idref="NumberGenerator17"/>
+        <int>11</int>
+       </void>
       </void>
      </void>
      <void property="reference">
@@ -2422,12 +2506,16 @@ KV: mod == NEURON</string>
        <float>100.0</float>
       </void>
      </void>
-     <void property="dur">
+     <void id="NumberGenerator18" property="dur">
+      <void class="ucl.physiol.neuroconstruct.utils.NumberGenerator" method="getField">
+       <string>numberType</string>
+       <void method="set">
+        <object idref="NumberGenerator18"/>
+        <int>11</int>
+       </void>
+      </void>
       <void property="fixedNum">
        <float>500.0</float>
-      </void>
-      <void property="numberType">
-       <int>11</int>
       </void>
      </void>
      <void property="reference">
@@ -2450,12 +2538,16 @@ KV: mod == NEURON</string>
        <float>100.0</float>
       </void>
      </void>
-     <void property="dur">
+     <void id="NumberGenerator19" property="dur">
+      <void class="ucl.physiol.neuroconstruct.utils.NumberGenerator" method="getField">
+       <string>numberType</string>
+       <void method="set">
+        <object idref="NumberGenerator19"/>
+        <int>11</int>
+       </void>
+      </void>
       <void property="fixedNum">
        <float>500.0</float>
-      </void>
-      <void property="numberType">
-       <int>11</int>
       </void>
      </void>
      <void property="reference">
@@ -2482,10 +2574,10 @@ KV: mod == NEURON</string>
      </void>
      <void property="inputs">
       <void method="add">
-       <string>Input_1</string>
+       <string>Input_0</string>
       </void>
       <void method="add">
-       <string>Input_0</string>
+       <string>Input_1</string>
       </void>
      </void>
      <void property="name">
@@ -2493,10 +2585,10 @@ KV: mod == NEURON</string>
      </void>
      <void property="plots">
       <void method="add">
-       <string>GranCell_mod_v</string>
+       <string>GranCell_CML_v</string>
       </void>
       <void method="add">
-       <string>GranCell_CML_v</string>
+       <string>GranCell_mod_v</string>
       </void>
      </void>
      <void property="simDuration">
@@ -2516,10 +2608,10 @@ KV: mod == NEURON</string>
      </void>
      <void property="inputs">
       <void method="add">
-       <string>KV_mod</string>
+       <string>KV_CML</string>
       </void>
       <void method="add">
-       <string>KV_CML</string>
+       <string>KV_mod</string>
       </void>
      </void>
      <void property="name">
@@ -2527,16 +2619,16 @@ KV: mod == NEURON</string>
      </void>
      <void property="plots">
       <void method="add">
-       <string>KV_mod_v</string>
-      </void>
-      <void method="add">
-       <string>KV_mod</string>
+       <string>KV_CML</string>
       </void>
       <void method="add">
        <string>KV_CML_v</string>
       </void>
       <void method="add">
-       <string>KV_CML</string>
+       <string>KV_mod</string>
+      </void>
+      <void method="add">
+       <string>KV_mod_v</string>
       </void>
      </void>
      <void property="simDuration">
@@ -2548,10 +2640,10 @@ KV: mod == NEURON</string>
     <object class="ucl.physiol.neuroconstruct.project.SimConfig">
      <void property="cellGroups">
       <void method="add">
-       <string>KIR_mod</string>
+       <string>KIR_CML</string>
       </void>
       <void method="add">
-       <string>KIR_CML</string>
+       <string>KIR_mod</string>
       </void>
      </void>
      <void property="description">
@@ -2559,10 +2651,10 @@ KV: mod == NEURON</string>
      </void>
      <void property="inputs">
       <void method="add">
-       <string>KIR_mod</string>
+       <string>KIR_CML</string>
       </void>
       <void method="add">
-       <string>KIR_CML</string>
+       <string>KIR_mod</string>
       </void>
      </void>
      <void property="name">
@@ -2570,16 +2662,16 @@ KV: mod == NEURON</string>
      </void>
      <void property="plots">
       <void method="add">
-       <string>KIR_mod_v</string>
+       <string>KIR_CML</string>
       </void>
       <void method="add">
        <string>KIR_CML_v</string>
       </void>
       <void method="add">
-       <string>KIR_CML</string>
+       <string>KIR_mod</string>
       </void>
       <void method="add">
-       <string>KIR_mod</string>
+       <string>KIR_mod_v</string>
       </void>
      </void>
      <void property="simDuration">
@@ -2591,10 +2683,10 @@ KV: mod == NEURON</string>
     <object class="ucl.physiol.neuroconstruct.project.SimConfig">
      <void property="cellGroups">
       <void method="add">
-       <string>KCa_mod</string>
+       <string>KCa_CML</string>
       </void>
       <void method="add">
-       <string>KCa_CML</string>
+       <string>KCa_mod</string>
       </void>
      </void>
      <void property="description">
@@ -2602,19 +2694,16 @@ KV: mod == NEURON</string>
      </void>
      <void property="inputs">
       <void method="add">
-       <string>KCa_mod</string>
+       <string>KCa_CML</string>
       </void>
       <void method="add">
-       <string>KCa_CML</string>
+       <string>KCa_mod</string>
       </void>
      </void>
      <void property="name">
       <string>KCa</string>
      </void>
      <void property="plots">
-      <void method="add">
-       <string>KCa_mod_v</string>
-      </void>
       <void method="add">
        <string>KCa_CML</string>
       </void>
@@ -2623,6 +2712,9 @@ KV: mod == NEURON</string>
       </void>
       <void method="add">
        <string>KCa_mod</string>
+      </void>
+      <void method="add">
+       <string>KCa_mod_v</string>
       </void>
      </void>
      <void property="simDuration">
@@ -2659,13 +2751,13 @@ KV: mod == NEURON</string>
        <string>KM_CML</string>
       </void>
       <void method="add">
+       <string>KM_CML_v</string>
+      </void>
+      <void method="add">
        <string>KM_mod</string>
       </void>
       <void method="add">
        <string>KM_mod_v</string>
-      </void>
-      <void method="add">
-       <string>KM_CML_v</string>
       </void>
      </void>
      <void property="simDuration">
@@ -2699,22 +2791,22 @@ KV: mod == NEURON</string>
      </void>
      <void property="plots">
       <void method="add">
-       <string>KA_mod_v</string>
+       <string>KA_CML_a</string>
       </void>
       <void method="add">
        <string>KA_CML_b</string>
       </void>
       <void method="add">
-       <string>KA_CML_a</string>
-      </void>
-      <void method="add">
-       <string>KA_mod_b</string>
+       <string>KA_CML_v</string>
       </void>
       <void method="add">
        <string>KA_mod_a</string>
       </void>
       <void method="add">
-       <string>KA_CML_v</string>
+       <string>KA_mod_b</string>
+      </void>
+      <void method="add">
+       <string>KA_mod_v</string>
       </void>
      </void>
      <void property="simDuration">
@@ -2742,13 +2834,13 @@ KV: mod == NEURON</string>
      </void>
      <void property="plots">
       <void method="add">
-       <string>Ca_mod_v</string>
+       <string>Ca_mod_s</string>
       </void>
       <void method="add">
        <string>Ca_mod_u</string>
       </void>
       <void method="add">
-       <string>Ca_mod_s</string>
+       <string>Ca_mod_v</string>
       </void>
      </void>
      <void property="simDuration">
@@ -2782,22 +2874,22 @@ KV: mod == NEURON</string>
      </void>
      <void property="plots">
       <void method="add">
-       <string>Na_mod_h</string>
-      </void>
-      <void method="add">
-       <string>Na_CML_v</string>
+       <string>Na_CML_h</string>
       </void>
       <void method="add">
        <string>Na_CML_m</string>
       </void>
       <void method="add">
-       <string>Na_mod_v</string>
+       <string>Na_CML_v</string>
       </void>
       <void method="add">
-       <string>Na_CML_h</string>
+       <string>Na_mod_h</string>
       </void>
       <void method="add">
        <string>Na_mod_m</string>
+      </void>
+      <void method="add">
+       <string>Na_mod_v</string>
       </void>
      </void>
      <void property="simDuration">
@@ -2831,19 +2923,19 @@ KV: mod == NEURON</string>
      </void>
      <void property="plots">
       <void method="add">
-       <string>NaR_mod_s</string>
-      </void>
-      <void method="add">
-       <string>NaR_mod_f</string>
-      </void>
-      <void method="add">
-       <string>NaR_CML_v</string>
+       <string>NaR_CML_f</string>
       </void>
       <void method="add">
        <string>NaR_CML_s</string>
       </void>
       <void method="add">
-       <string>NaR_CML_f</string>
+       <string>NaR_CML_v</string>
+      </void>
+      <void method="add">
+       <string>NaR_mod_f</string>
+      </void>
+      <void method="add">
+       <string>NaR_mod_s</string>
       </void>
       <void method="add">
        <string>NaR_mod_v</string>
@@ -2858,10 +2950,10 @@ KV: mod == NEURON</string>
     <object class="ucl.physiol.neuroconstruct.project.SimConfig">
      <void property="cellGroups">
       <void method="add">
-       <string>pNa_mod</string>
+       <string>pNa_CML</string>
       </void>
       <void method="add">
-       <string>pNa_CML</string>
+       <string>pNa_mod</string>
       </void>
      </void>
      <void property="description">
@@ -2869,10 +2961,10 @@ KV: mod == NEURON</string>
      </void>
      <void property="inputs">
       <void method="add">
-       <string>pNa_mod</string>
+       <string>pNa_CML</string>
       </void>
       <void method="add">
-       <string>pNa_CML</string>
+       <string>pNa_mod</string>
       </void>
      </void>
      <void property="name">
@@ -2880,16 +2972,16 @@ KV: mod == NEURON</string>
      </void>
      <void property="plots">
       <void method="add">
-       <string>pNa_mod_v</string>
-      </void>
-      <void method="add">
-       <string>pNa_mod_m</string>
+       <string>pNa_CML_m</string>
       </void>
       <void method="add">
        <string>pNa_CML_v</string>
       </void>
       <void method="add">
-       <string>pNa_CML_m</string>
+       <string>pNa_mod_m</string>
+      </void>
+      <void method="add">
+       <string>pNa_mod_v</string>
       </void>
      </void>
      <void property="simDuration">

@@ -7,6 +7,7 @@ generatedNeuroML
 generatedMOOSE
 generatedPSICS
 simulations
+generatedNeuroML*
 *.bak
 
 NEURON/spike_times*.dat
