@@ -15,7 +15,7 @@ To get a local copy of this project, [install Git](http://www.opensourcebrain.or
 
 **Original NEURON version**
 
-The PyNEURON version of this model is available [here](http://www.opensourcebrain.org/projects/grancellsolinasetal10/repository/show/NEURON). More details on NEURON are [here](http://www.opensourcebrain.org/projects/simulators/wiki/Wiki#NEURON).
+The PyNEURON version of this model is available [here](https://github.com/OpenSourceBrain/GranCellSolinasEtAl10/tree/master/NEURON). More details on NEURON are [here](http://www.opensourcebrain.org/projects/simulators/wiki/Wiki#NEURON).
 
 Once the project is checked out as above, run the NEURON version with:
 
