@@ -6,7 +6,7 @@ Usage: python test.py
 from neuron import h
 import numpy as np
 
-def testCell(runAndPlotAlso):
+def testCell(run, plot):
     from GRANULE_Cell import Grc
 
     delay = 100.
@@ -31,13 +31,14 @@ def testCell(runAndPlotAlso):
     h.steps_per_ms = 40
     h.v_init = -60
 
-    if runAndPlotAlso:
+    if run:
         h.run()
+
 
         # convert the membrane potential and time values in numpy arrays
         time_points = np.array(granule.time)
         vm_points = np.array(granule.vm)
-        
+
         spiking  = 0 
         threshold = 0
         spike_times = []
@@ -56,22 +57,33 @@ def testCell(runAndPlotAlso):
         spike_times_file.close()
 
         print "Saved spike times in file %s"%spike_times_file.name
-
         
-        from matplotlib import pyplot as plt
-        fig = plt.figure()
-        trace_ax = fig.add_subplot(111)
-        trace_ax.plot(time_points, vm_points)
+        
+        voltage_file = open("voltage_%sdeg_%snA.dat"%(h.celsius, electrode.amp), 'w')
+        
+        for i in range(len(time_points)):
+            voltage_file.write('%s\t%s\n'%(time_points[i], vm_points[i]))
+        voltage_file.close()
 
-        trace_ax.set_xlabel('Time (ms)')
-        trace_ax.set_ylabel('mV')
-        trace_ax.set_title('Membrane potential')
+        print "Saved voltage in file %s"%voltage_file.name
 
-        fig.suptitle('Pulse duration: %d ms; pulse amplitude: %d pA; temperature: %d deg C' % (duration, amplitude * 1e3, h.celsius))
+        if plot:
+            h.run()
 
-        plt.show()
+            from matplotlib import pyplot as plt
+            fig = plt.figure()
+            trace_ax = fig.add_subplot(111)
+            trace_ax.plot(time_points, vm_points)
+
+            trace_ax.set_xlabel('Time (ms)')
+            trace_ax.set_ylabel('mV')
+            trace_ax.set_title('Membrane potential')
+
+            fig.suptitle('Pulse duration: %d ms; pulse amplitude: %d pA; temperature: %d deg C' % (duration, amplitude * 1e3, h.celsius))
+
+            plt.show()
 
     return granule
 
 if __name__ == "__main__":
-    testCell(True)
+    testCell(True, True)

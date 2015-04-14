@@ -21,7 +21,8 @@ Tests:
 KV:       mod == NEURON 
 KIR:     mod == NEURON
 KCa:
-KM:      mod == NEURON</string>
+KM:      mod == NEURON
+Na:       mod == NEURON</string>
   </void>
   <void property="projectFileVersion">
    <string>neuroConstruct v1.7.1</string>
@@ -1984,7 +1985,7 @@ KM:      mod == NEURON</string>
    <float>100.0</float>
   </void>
   <void property="reference">
-   <string>Sim_234</string>
+   <string>Sim_237</string>
   </void>
   <void property="saveCopyGenSimFiles">
    <boolean>true</boolean>

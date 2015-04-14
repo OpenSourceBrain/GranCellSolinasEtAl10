@@ -58,6 +58,12 @@
                         <bio:group>all</bio:group>
                     </bio:parameter>
                 </bio:mechanism>
+
+                <bio:mechanism name="GranSol10_Na" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="13.0">
+                        <bio:group>all</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
                 
 
                 <bio:spec_capacitance>

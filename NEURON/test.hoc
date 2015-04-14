@@ -6,40 +6,7 @@ Usage: nrngui test.hoc
 Note: requires NEURON to be compiled with Python, since this uses test.py
 */
 
-{load_file("nrngui.hoc")}
+nrnpython("from test import testCell")
+nrnpython("testCell(True, False)")
 
-nrnpython("import sys")
-nrnpython("import os")
 
-nrnpython("from neuron import h")
-nrnpython("import numpy as np")
-
-nrnpython("if sys.path.count(os.getcwd())==0: sys.path.append(os.getcwd())")
-nrnpython("from test import *")
-
-objref soma
-nrnpython("grc = testCell(False)")
-nrnpython("soma = grc.getSomaSection()")
-
-forall print secname()
-
-objref GranCell_v
-GranCell_v = new Graph(0)
-{GranCell_v.size(0, tstop,-75.0,50.0)}
-{GranCell_v.view(0, -75.0, tstop, 125.0, 80, 330, 330, 250)}
-{
-    GranCell_v.addexpr("v", "v(0.5)", 1, 1, 0.8, 0.9, 2)
-}
-
-{
-xpanel("RunControl", 0)
-xbutton("Init & Run","run()")
-xbutton("Stop","stoprun=1")
-t = 0
-xvalue("t","t", 2 )
-xvalue("Tstop","tstop", 1,"tstop_changed()", 0, 1 )
-xvalue("dt","dt", 1,"setdt()", 0, 1 )
-xpanel(80,80)
-}
-
-print "*************\nThis test.hoc is not fully tested yet!!! Use test.py\n**************"
