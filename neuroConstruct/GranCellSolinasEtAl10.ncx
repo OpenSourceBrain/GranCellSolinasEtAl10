@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<java version="1.7.0_25" class="java.beans.XMLDecoder">
+<java version="1.7.0_75" class="java.beans.XMLDecoder">
 
 <!-- This is a neuroConstruct project file. It's best to open this
 file with neuroConstruct, as opposed to editing it directly. 
@@ -15,13 +15,16 @@ Note: ChannelML versions of mod files will only work at 30degC, due to ChannelML
 
 NeuroML2 will incorporate this feature and so the basic mappings ChannelML -&gt; NML2 channels will be used as a basis for the fully temp dependent channels.
 
-But first the ChannelMLversions at 30deg should be matched to the mod files &amp; tested...
+But first the ChannelML versions at 30deg should be matched to the mod files &amp; tested...
 
 Tests:
-KV: mod == NEURON </string>
+KV:       mod == NEURON 
+KIR:     mod == NEURON
+KCa:
+KM:      mod == NEURON</string>
   </void>
   <void property="projectFileVersion">
-   <string>neuroConstruct v1.7.0</string>
+   <string>neuroConstruct v1.7.1</string>
   </void>
   <void property="projectName">
    <string>GranCellSolinasEtAl10</string>
@@ -1981,7 +1984,7 @@ KV: mod == NEURON </string>
    <float>100.0</float>
   </void>
   <void property="reference">
-   <string>Sim_218</string>
+   <string>Sim_224</string>
   </void>
   <void property="saveCopyGenSimFiles">
    <boolean>true</boolean>
@@ -2602,6 +2605,9 @@ KV: mod == NEURON </string>
       <void method="add">
        <string>KV_CML</string>
       </void>
+      <void method="add">
+       <string>KV_mod</string>
+      </void>
      </void>
      <void property="description">
       <string>KV channel test for the granule cell</string>
@@ -2675,7 +2681,7 @@ KV: mod == NEURON </string>
       </void>
      </void>
      <void property="simDuration">
-      <float>100.0</float>
+      <float>300.0</float>
      </void>
     </object>
    </void>
@@ -2761,7 +2767,7 @@ KV: mod == NEURON </string>
       </void>
      </void>
      <void property="simDuration">
-      <float>100.0</float>
+      <float>300.0</float>
      </void>
     </object>
    </void>

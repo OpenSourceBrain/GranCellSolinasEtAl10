@@ -10,4 +10,4 @@ simulations
 generatedNeuroML*
 *.bak
 
-NEURON/spike_times*.dat
+NEURON/*.dat
