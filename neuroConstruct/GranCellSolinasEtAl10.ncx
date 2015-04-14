@@ -1530,7 +1530,7 @@ KM:      mod == NEURON</string>
       <string>0</string>
      </void>
      <void property="graphWindow">
-      <string>GraphWin_14</string>
+      <string>GraphWin_3</string>
      </void>
      <void property="maxValue">
       <float>1.0</float>
@@ -1561,7 +1561,7 @@ KM:      mod == NEURON</string>
       <string>0</string>
      </void>
      <void property="graphWindow">
-      <string>GraphWin_14</string>
+      <string>GraphWin_3</string>
      </void>
      <void property="maxValue">
       <float>1.0</float>
@@ -1984,7 +1984,7 @@ KM:      mod == NEURON</string>
    <float>100.0</float>
   </void>
   <void property="reference">
-   <string>Sim_224</string>
+   <string>Sim_234</string>
   </void>
   <void property="saveCopyGenSimFiles">
    <boolean>true</boolean>
@@ -2558,6 +2558,64 @@ KM:      mod == NEURON</string>
      </void>
     </object>
    </void>
+   <void method="add">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+     <void property="amp">
+      <void property="fixedNum">
+       <float>-0.05</float>
+      </void>
+     </void>
+     <void property="cellGroup">
+      <string>Na_mod</string>
+     </void>
+     <void property="del">
+      <void property="fixedNum">
+       <float>200.0</float>
+      </void>
+     </void>
+     <void id="NumberGenerator20" property="dur">
+      <void class="ucl.physiol.neuroconstruct.utils.NumberGenerator" method="getField">
+       <string>numberType</string>
+       <void method="set">
+        <object idref="NumberGenerator20"/>
+        <int>11</int>
+       </void>
+      </void>
+     </void>
+     <void property="reference">
+      <string>Na_mod_hyp</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+     <void property="amp">
+      <void property="fixedNum">
+       <float>-0.05</float>
+      </void>
+     </void>
+     <void property="cellGroup">
+      <string>Na_CML</string>
+     </void>
+     <void property="del">
+      <void property="fixedNum">
+       <float>200.0</float>
+      </void>
+     </void>
+     <void id="NumberGenerator21" property="dur">
+      <void class="ucl.physiol.neuroconstruct.utils.NumberGenerator" method="getField">
+       <string>numberType</string>
+       <void method="set">
+        <object idref="NumberGenerator21"/>
+        <int>11</int>
+       </void>
+      </void>
+     </void>
+     <void property="reference">
+      <string>Na_CML_hyp</string>
+     </void>
+    </object>
+   </void>
   </void>
  </object>
  <object class="ucl.physiol.neuroconstruct.project.SimConfigInfo">
@@ -2872,7 +2930,13 @@ KM:      mod == NEURON</string>
        <string>Na_CML</string>
       </void>
       <void method="add">
+       <string>Na_CML_hyp</string>
+      </void>
+      <void method="add">
        <string>Na_mod</string>
+      </void>
+      <void method="add">
+       <string>Na_mod_hyp</string>
       </void>
      </void>
      <void property="name">
@@ -2899,7 +2963,7 @@ KM:      mod == NEURON</string>
       </void>
      </void>
      <void property="simDuration">
-      <float>100.0</float>
+      <float>300.0</float>
      </void>
     </object>
    </void>
@@ -3016,6 +3080,34 @@ KM:      mod == NEURON</string>
      <void property="plots">
       <void method="add">
        <string>GranCell_mod_v</string>
+      </void>
+     </void>
+     <void property="simDuration">
+      <float>700.0</float>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="ucl.physiol.neuroconstruct.project.SimConfig">
+     <void property="cellGroups">
+      <void method="add">
+       <string>GranCell_CML</string>
+      </void>
+     </void>
+     <void property="description">
+      <string>Only cell with ChannelML channels</string>
+     </void>
+     <void property="inputs">
+      <void method="add">
+       <string>Input_0</string>
+      </void>
+     </void>
+     <void property="name">
+      <string>ChannelML Only</string>
+     </void>
+     <void property="plots">
+      <void method="add">
+       <string>GranCell_CML_v</string>
       </void>
      </void>
      <void property="simDuration">
