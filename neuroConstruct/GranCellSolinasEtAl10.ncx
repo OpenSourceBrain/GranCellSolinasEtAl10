@@ -214,7 +214,7 @@ KA:      mod == NEURON</string>
      <string>GranCellSol10_CML</string>
     </void>
     <void method="add">
-     <string>GranCellSol10_mod</string>
+     <string>GranCellSol10_mod_most</string>
     </void>
    </void>
    <void method="get">
@@ -1712,7 +1712,7 @@ KA:      mod == NEURON</string>
       <string>0</string>
      </void>
      <void property="graphWindow">
-      <string>GraphWin_14</string>
+      <string>GraphWin_3</string>
      </void>
      <void property="maxValue">
       <float>1.0</float>
@@ -1743,7 +1743,7 @@ KA:      mod == NEURON</string>
       <string>0</string>
      </void>
      <void property="graphWindow">
-      <string>GraphWin_14</string>
+      <string>GraphWin_3</string>
      </void>
      <void property="maxValue">
       <float>1.0</float>
@@ -1976,13 +1976,13 @@ KA:      mod == NEURON</string>
  <object class="ucl.physiol.neuroconstruct.psics.PsicsSettings"/>
  <object class="ucl.physiol.neuroconstruct.simulation.SimulationParameters">
   <void property="dt">
-   <float>0.01</float>
+   <float>0.005</float>
   </void>
   <void property="duration">
    <float>100.0</float>
   </void>
   <void property="reference">
-   <string>Sim_245</string>
+   <string>Sim_264</string>
   </void>
   <void property="saveCopyGenSimFiles">
    <boolean>true</boolean>
@@ -2672,6 +2672,64 @@ KA:      mod == NEURON</string>
      </void>
     </object>
    </void>
+   <void method="add">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+     <void property="amp">
+      <void property="fixedNum">
+       <float>-0.05</float>
+      </void>
+     </void>
+     <void property="cellGroup">
+      <string>NaR_mod</string>
+     </void>
+     <void property="del">
+      <void property="fixedNum">
+       <float>200.0</float>
+      </void>
+     </void>
+     <void id="NumberGenerator24" property="dur">
+      <void class="ucl.physiol.neuroconstruct.utils.NumberGenerator" method="getField">
+       <string>numberType</string>
+       <void method="set">
+        <object idref="NumberGenerator24"/>
+        <int>11</int>
+       </void>
+      </void>
+     </void>
+     <void property="reference">
+      <string>Input_4</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+     <void property="amp">
+      <void property="fixedNum">
+       <float>-0.05</float>
+      </void>
+     </void>
+     <void property="cellGroup">
+      <string>NaR_CML</string>
+     </void>
+     <void property="del">
+      <void property="fixedNum">
+       <float>200.0</float>
+      </void>
+     </void>
+     <void id="NumberGenerator25" property="dur">
+      <void class="ucl.physiol.neuroconstruct.utils.NumberGenerator" method="getField">
+       <string>numberType</string>
+       <void method="set">
+        <object idref="NumberGenerator25"/>
+        <int>11</int>
+       </void>
+      </void>
+     </void>
+     <void property="reference">
+      <string>Input_5</string>
+     </void>
+    </object>
+   </void>
   </void>
  </object>
  <object class="ucl.physiol.neuroconstruct.project.SimConfigInfo">
@@ -2992,13 +3050,7 @@ KA:      mod == NEURON</string>
        <string>Na_CML</string>
       </void>
       <void method="add">
-       <string>Na_CML_hyp</string>
-      </void>
-      <void method="add">
        <string>Na_mod</string>
-      </void>
-      <void method="add">
-       <string>Na_mod_hyp</string>
       </void>
      </void>
      <void property="name">
@@ -3044,6 +3096,12 @@ KA:      mod == NEURON</string>
      </void>
      <void property="inputs">
       <void method="add">
+       <string>Input_4</string>
+      </void>
+      <void method="add">
+       <string>Input_5</string>
+      </void>
+      <void method="add">
        <string>NaR_CML</string>
       </void>
       <void method="add">
@@ -3074,7 +3132,7 @@ KA:      mod == NEURON</string>
       </void>
      </void>
      <void property="simDuration">
-      <float>100.0</float>
+      <float>300.0</float>
      </void>
     </object>
    </void>
