@@ -136,7 +136,11 @@ PROCEDURE rate(v (mV)) {LOCAL a_m, b_m, a_h, b_h
 	tau_m = 1/(a_m + b_m) 
 	h_inf = a_h/(a_h + b_h) 
 	tau_h = 1/(a_h + b_h) 
-	:if (tau_h<0.1 (ms)) {tau_h=0.1 (ms)} : riga aggiunta il 10 giugno 2003
+    
+    : These checks were put in by Padraig Gleeson & Segio Solinas in Apr 2015
+    : Note, these conditions are unlikely ever to be fulfilled normally, as v is not normally <75mV 
+	if (tau_m < 0.01 (ms)) {tau_m = 0.01 (ms)}
+	if (tau_h < 0.1 (ms))  {tau_h = 0.1 (ms)}
 } 
 
 FUNCTION linoid(x (mV),y (mV)) (mV) {
