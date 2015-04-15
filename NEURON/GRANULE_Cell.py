@@ -5,7 +5,7 @@ from synapse.synapse import Synapse
 
 class Grc:
     def __init__(self,position):
-        self.soma = h.Section(cell=self)
+        self.soma = h.Section(name='soma')
         self.soma.nseg = 1
         self.soma.diam = 9.76
         self.soma.L = 9.76
