@@ -15,4 +15,7 @@ experiments:
           header: 0
         average last: 100
         tolerance: 0
+      morphology:
+        base section: soma
+        tolerance: 0
       temperature: 30

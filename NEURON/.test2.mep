@@ -4,4 +4,7 @@ experiments:
   Current clamp:
     expected:
       resting: -71.4796278344
+      morphology:
+        total area: 299.26059
+        number of cells: 1
       temperature: 30      
