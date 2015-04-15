@@ -1,0 +1,18 @@
+# Script for running automated tests on OSB using Travis-CI, see https://github.com/OpenSourceBrain/osb-model-validation
+# Still in development, subject to change without notice!!
+
+target: test2.hoc 
+engine: NEURON
+mep: .test2.mep
+experiments:
+  Current clamp:
+    observables:
+      resting:
+        file: 
+          path: voltage_30.0deg_0.0nA.dat
+          columns: [0,1]
+          scaling: [1, 1]
+          header: 0
+        average last: 100
+        tolerance: 0
+      temperature: 30

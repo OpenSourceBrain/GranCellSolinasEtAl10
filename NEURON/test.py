@@ -6,12 +6,11 @@ Usage: python test.py
 from neuron import h
 import numpy as np
 
-def testCell(run, plot):
+def testCell(run, plot, amplitude = 10.e-3):
     from GRANULE_Cell import Grc
 
     delay = 100.
     duration = 500.
-    amplitude = 10.e-3
     tstop = 700
 
     granule = Grc(position=np.zeros(3))

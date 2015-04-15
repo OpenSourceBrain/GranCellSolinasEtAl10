@@ -1,0 +1,7 @@
+system: Testing a single compartment cell
+
+experiments:
+  Current clamp:
+    expected:
+      resting: -71.4796278344
+      temperature: 30      
