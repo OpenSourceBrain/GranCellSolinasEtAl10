@@ -7,6 +7,6 @@ Note: requires NEURON to be compiled with Python, since this uses test.py
 */
 
 nrnpython("from test import testCell")
-nrnpython("testCell(True, False, amplitude = 0)")
+nrnpython("granule = testCell(True, False, amplitude = 0)")
 
 
