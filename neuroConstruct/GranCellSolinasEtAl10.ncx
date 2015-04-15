@@ -1982,7 +1982,7 @@ KA:      mod == NEURON</string>
    <float>100.0</float>
   </void>
   <void property="reference">
-   <string>Sim_264</string>
+   <string>Sim_266</string>
   </void>
   <void property="saveCopyGenSimFiles">
    <boolean>true</boolean>
@@ -2352,7 +2352,7 @@ KA:      mod == NEURON</string>
     <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
      <void property="amp">
       <void property="fixedNum">
-       <float>0.01</float>
+       <float>0.04</float>
       </void>
      </void>
      <void property="cellGroup">
@@ -2376,7 +2376,7 @@ KA:      mod == NEURON</string>
     <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
      <void property="amp">
       <void property="fixedNum">
-       <float>0.01</float>
+       <float>0.04</float>
       </void>
      </void>
      <void property="cellGroup">
@@ -3050,7 +3050,13 @@ KA:      mod == NEURON</string>
        <string>Na_CML</string>
       </void>
       <void method="add">
+       <string>Na_CML_hyp</string>
+      </void>
+      <void method="add">
        <string>Na_mod</string>
+      </void>
+      <void method="add">
+       <string>Na_mod_hyp</string>
       </void>
      </void>
      <void property="name">
