@@ -29,6 +29,12 @@
 
             <biophysics units="Physiological Units">
 
+                <bio:mechanism name="GranSol10_KA" type="Channel Mechanism">
+                    <bio:parameter name="gmax" value="3.2">
+                        <bio:group>all</bio:group>
+                    </bio:parameter>
+                </bio:mechanism>
+
                 <bio:mechanism name="GranSol10_KIR" type="Channel Mechanism">
                     <bio:parameter name="gmax" value="1.35">
                         <bio:group>all</bio:group>

@@ -46,6 +46,8 @@
 		  -->
                 <transition name="alpha" from="m0" to="m" expr_form="exp_linear" rate="3" scale="10" midpoint="-19"/>
                 <transition name="beta" from="m" to="m0" expr_form="exponential" rate="12" scale="-18.182" midpoint="-44"/>
+                
+                <time_course name="tau" from="m0" to="m" expr_form="generic" expr="1/(alpha + beta) &lt; 0.01 ? 0.01 : 1/(alpha + beta)" />
             </gate>
 
 	    <gate name="h" instances="1">
@@ -54,6 +56,8 @@
                      
                 <transition name="alpha" from="h0" to="h" expr_form="exponential" rate="0.105" scale="-3.333" midpoint="-44"/>
                 <transition name="beta" from="h" to="h0" expr_form="sigmoid" rate="0.75" scale="-5" midpoint="-11"/>
+                
+                <time_course name="tau" from="h0" to="h" expr_form="generic" expr="1/(alpha + beta) &lt; 0.1 ? 0.1 : 1/(alpha + beta)" />
             </gate>
         </current_voltage_relation>
         

@@ -22,7 +22,8 @@ KV:       mod == NEURON
 KIR:     mod == NEURON
 KCa:
 KM:      mod == NEURON
-Na:       mod == NEURON</string>
+Na:       mod == NEURON
+KA:      mod == NEURON</string>
   </void>
   <void property="projectFileVersion">
    <string>neuroConstruct v1.7.1</string>
@@ -1171,7 +1172,7 @@ Na:       mod == NEURON</string>
       <string>0</string>
      </void>
      <void property="graphWindow">
-      <string>GraphWin_11</string>
+      <string>GraphWin_3</string>
      </void>
      <void property="maxValue">
       <float>1.0</float>
@@ -1202,7 +1203,7 @@ Na:       mod == NEURON</string>
       <string>0</string>
      </void>
      <void property="graphWindow">
-      <string>GraphWin_11</string>
+      <string>GraphWin_3</string>
      </void>
      <void property="maxValue">
       <float>1.0</float>
@@ -1966,11 +1967,7 @@ Na:       mod == NEURON</string>
    </object>
   </void>
  </object>
- <object class="ucl.physiol.neuroconstruct.neuron.NeuronSettings">
-  <void property="showShapePlot">
-   <boolean>true</boolean>
-  </void>
- </object>
+ <object class="ucl.physiol.neuroconstruct.neuron.NeuronSettings"/>
  <object class="ucl.physiol.neuroconstruct.genesis.GenesisSettings">
   <void property="unitSystemToUse">
    <int>3</int>
@@ -1979,13 +1976,13 @@ Na:       mod == NEURON</string>
  <object class="ucl.physiol.neuroconstruct.psics.PsicsSettings"/>
  <object class="ucl.physiol.neuroconstruct.simulation.SimulationParameters">
   <void property="dt">
-   <float>0.001</float>
+   <float>0.01</float>
   </void>
   <void property="duration">
    <float>100.0</float>
   </void>
   <void property="reference">
-   <string>Sim_237</string>
+   <string>Sim_245</string>
   </void>
   <void property="saveCopyGenSimFiles">
    <boolean>true</boolean>
@@ -2617,6 +2614,64 @@ Na:       mod == NEURON</string>
      </void>
     </object>
    </void>
+   <void method="add">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+     <void property="amp">
+      <void property="fixedNum">
+       <float>-0.01</float>
+      </void>
+     </void>
+     <void property="cellGroup">
+      <string>KA_mod</string>
+     </void>
+     <void property="del">
+      <void property="fixedNum">
+       <float>200.0</float>
+      </void>
+     </void>
+     <void id="NumberGenerator22" property="dur">
+      <void class="ucl.physiol.neuroconstruct.utils.NumberGenerator" method="getField">
+       <string>numberType</string>
+       <void method="set">
+        <object idref="NumberGenerator22"/>
+        <int>11</int>
+       </void>
+      </void>
+     </void>
+     <void property="reference">
+      <string>Input_2</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="ucl.physiol.neuroconstruct.simulation.IClampSettings">
+     <void property="amp">
+      <void property="fixedNum">
+       <float>-0.01</float>
+      </void>
+     </void>
+     <void property="cellGroup">
+      <string>KA_CML</string>
+     </void>
+     <void property="del">
+      <void property="fixedNum">
+       <float>200.0</float>
+      </void>
+     </void>
+     <void id="NumberGenerator23" property="dur">
+      <void class="ucl.physiol.neuroconstruct.utils.NumberGenerator" method="getField">
+       <string>numberType</string>
+       <void method="set">
+        <object idref="NumberGenerator23"/>
+        <int>11</int>
+       </void>
+      </void>
+     </void>
+     <void property="reference">
+      <string>Input_3</string>
+     </void>
+    </object>
+   </void>
   </void>
  </object>
  <object class="ucl.physiol.neuroconstruct.project.SimConfigInfo">
@@ -2845,6 +2900,12 @@ Na:       mod == NEURON</string>
      </void>
      <void property="inputs">
       <void method="add">
+       <string>Input_2</string>
+      </void>
+      <void method="add">
+       <string>Input_3</string>
+      </void>
+      <void method="add">
        <string>KA_CML</string>
       </void>
       <void method="add">
@@ -2875,7 +2936,7 @@ Na:       mod == NEURON</string>
       </void>
      </void>
      <void property="simDuration">
-      <float>100.0</float>
+      <float>300.0</float>
      </void>
     </object>
    </void>
