@@ -60,7 +60,10 @@ class Grc:
         self.spike.start = -10
         self.spike.number = 1
         self.spike.interval = 1e9
-        self.nc = h.NetCon(self.soma(1)._ref_v, self.spike, sec = self.soma, threshold=-20, delay=0, weight=1)
+        self.nc = h.NetCon(self.soma(1)._ref_v, self.spike, sec = self.soma)
+        self.nc.threshold=-20
+        self.nc.delay=0
+        self.nc.weight[0]=1
 
         self.SpikeTrain_output = [h.Vector(),h.Vector()]
         self.nc.record(self.SpikeTrain_output[1], self.SpikeTrain_output[0], 1)
