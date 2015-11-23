@@ -5,6 +5,7 @@ Usage: python test.py
 """
 from neuron import h
 import numpy as np
+import sys
 
 def testCell(run, plot, amplitude = 10.e-3):
     from GRANULE_Cell import Grc
@@ -85,4 +86,6 @@ def testCell(run, plot, amplitude = 10.e-3):
     return granule
 
 if __name__ == "__main__":
-    testCell(True, True)
+    
+    plot = not '-nogui' in sys.argv
+    testCell(True, plot)
