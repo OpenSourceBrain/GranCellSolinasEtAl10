@@ -90,12 +90,12 @@ class Grc:
         if ngoc <0 :
             ngoc = nmf
 
-	for i in range(nmf):
-	    self.MF_L.append(Synapse('glom',self,self.soma,nrel))
-	
-        #Inibition
-	for i in range(ngoc):
-	    self.GOC_L.append(Synapse('goc',self,self.soma))
+        for i in range(nmf):
+            self.MF_L.append(Synapse('glom',self,self.soma,nrel))
+
+            #Inibition
+        for i in range(ngoc):
+            self.GOC_L.append(Synapse('goc',self,self.soma))
 
 
 	

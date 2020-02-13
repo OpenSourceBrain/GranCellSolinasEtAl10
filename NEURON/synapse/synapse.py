@@ -4,10 +4,10 @@ from neuron import h
 class Synapse:
     def __init__(self,source,target,section,nrel = 0,syntype = 'ANK',record_all = 1, weight = 1):
 		
-	self.input = h.NetStim(0.5)
-	self.input.start = -10
-	self.input.number = 1
-	self.input.interval = 1e9
+        self.input = h.NetStim(0.5)
+        self.input.start = -10
+        self.input.number = 1
+        self.input.interval = 1e9
         self.weight = weight
 
         self.nrel = nrel
@@ -28,7 +28,7 @@ class Synapse:
         if sourcetype == 'glom':
             if target.whatami == 'PF':
                 ## No input to the fake grcs
-                print 'Pf'
+                print('Pf')
             else:
                 # Make a mf synapse
                 if self.nrel>0 :

@@ -22,7 +22,7 @@ def testCell(run, plot, amplitude = 10.e-3):
 
     h.psection()
     h.celsius = 30
-    print "Temperature of simulation is %f deg C "%h.celsius
+    print("Temperature of simulation is %f deg C "%h.celsius) 
 
     # run the simulation
     h.load_file("stdrun.hoc")
@@ -56,7 +56,7 @@ def testCell(run, plot, amplitude = 10.e-3):
             spike_times_file.write('%f\n'%st)
         spike_times_file.close()
 
-        print "Saved spike times in file %s"%spike_times_file.name
+        print("Saved spike times in file %s"%spike_times_file.name)
         
         
         voltage_file = open("voltage_%sdeg_%snA.dat"%(h.celsius, electrode.amp), 'w')
@@ -65,7 +65,7 @@ def testCell(run, plot, amplitude = 10.e-3):
             voltage_file.write('%s\t%s\n'%(time_points[i], vm_points[i]))
         voltage_file.close()
 
-        print "Saved voltage in file %s"%voltage_file.name
+        print("Saved voltage in file %s"%voltage_file.name)
 
         if plot:
             h.run()
