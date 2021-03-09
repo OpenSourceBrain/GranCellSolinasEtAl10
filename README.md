@@ -33,3 +33,5 @@ See full instructions for installing neuroConstruct, and for running this and ot
 
 See here: [Cerebellar Granule cell modelling](http://www.opensourcebrain.org/projects/cerebellar-granule-cell-modelling/wiki/Wiki)
 
+[![Build Status](https://travis-ci.com/OpenSourceBrain/GranCellSolinasEtAl10.svg?branch=master)](https://travis-ci.com/OpenSourceBrain/GranCellSolinasEtAl10)
+
