@@ -12,3 +12,4 @@ generatedNeuroML*
 *.bak
 
 NEURON/*.dat
+arm64

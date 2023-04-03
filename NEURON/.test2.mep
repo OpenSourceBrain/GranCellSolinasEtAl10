@@ -3,7 +3,7 @@ system: Testing a single compartment cell
 experiments:
   Current clamp:
     expected:
-      resting: -71.4796278344
+      resting: -71.47962709812334
       morphology:
         total area: 299.26059
         number of cells: 1
