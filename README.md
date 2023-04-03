@@ -1,3 +1,7 @@
+## Granule cell - Solinas et al. 2010
+
+[![Continuous build using OMV](https://github.com/OpenSourceBrain/GranCellSolinasEtAl10/actions/workflows/omv-ci.yml/badge.svg)](https://github.com/OpenSourceBrain/GranCellSolinasEtAl10/actions/workflows/omv-ci.yml)
+
 Initial version of Granule cell from: Solinas S., Nieus T, d'Angelo E. (2010) A Realistic Large-Scale Model of the Cerebellum Granular Layer Predicts Circuit Spatio-Temporal Filtering Properties. Front Cell Neurosci. 2010;4:12.
 
 See http://www.opensourcebrain.org/projects/grancellsolinasetal10 for more details
@@ -33,5 +37,4 @@ See full instructions for installing neuroConstruct, and for running this and ot
 
 See here: [Cerebellar Granule cell modelling](http://www.opensourcebrain.org/projects/cerebellar-granule-cell-modelling/wiki/Wiki)
 
-[![Build Status](https://travis-ci.com/OpenSourceBrain/GranCellSolinasEtAl10.svg?branch=master)](https://travis-ci.com/OpenSourceBrain/GranCellSolinasEtAl10)
 
